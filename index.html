@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>🌟❄️しゃいるボタン</title>
+    <script src="shairu_button.js"></script>
   </head>
   <body>
     しゃいるボタンだよ
@@ -22,10 +23,30 @@
         <source src="/mp3/ななななななな.mp3">
       </audio>
     </button>
--->
-    <audio>
-        <source src="ななななななな.mp3">
+      <div class="btn" onclick="audio()">音が鳴るよ!</div>
+      <audio id="bun_oudio">
+        <source src="ななななななな.mp3" type="audio/mp3">
         ななななななな
       </audio>
+      <button>
+      <audio id="bun_oudio">
+        <source src="ななななななな.mp3" type="audio/mp3">
+        ななななななな
+      </audio>
+    </button>
+  -->
+
+    <button onclick="ring1()">
+      もうだいじょうぶ～
+      <audio id="a">
+        <source src="mp3/もうだいじょうぶ～.mp3" type="audio/mp3">
+      </audio>
+    </button>
+    <button onclick="ring2()">
+        なななななななななななな
+        <audio id="b">
+          <source src="mp3/ななななななな.mp3" type="audio/mp3">
+        </audio>
+      </button>
   </body>
 </html>
