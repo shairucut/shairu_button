@@ -8,6 +8,7 @@ function reset(){
 }
 function ring1(){  document.getElementById('a').currentTime = 0; document.getElementById('a').play(); }
 function ring2(){  document.getElementById('b').currentTime = 0; document.getElementById('b').play(); }
+function ring3(){  document.getElementById('c').currentTime = 0; document.getElementById('c').play(); }
 /*
 avaScriptJavaScript
 (function (window, $) {
