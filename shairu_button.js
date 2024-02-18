@@ -12,6 +12,7 @@ function ring3(){  document.getElementById('c').currentTime = 0; document.getEle
 function ring4(){  document.getElementById('d').currentTime = 0; document.getElementById('d').play(); }
 function ring5(){  document.getElementById('e').currentTime = 0; document.getElementById('e').play(); }
 function ring6(){  document.getElementById('f').currentTime = 0; document.getElementById('f').play(); }
+function ring7(){  document.getElementById('g').currentTime = 0; document.getElementById('g').play(); }
 /*
 avaScriptJavaScript
 (function (window, $) {
