@@ -14,6 +14,7 @@ function ring5(){  document.getElementById('e').currentTime = 0; document.getEle
 function ring6(){  document.getElementById('f').currentTime = 0; document.getElementById('f').play(); }
 function ring7(){  document.getElementById('g').currentTime = 0; document.getElementById('g').play(); }
 function ring8(){  document.getElementById('h').currentTime = 0; document.getElementById('h').play(); }
+function ring9(){  document.getElementById('i').currentTime = 0; document.getElementById('i').play(); }
 /*
 avaScriptJavaScript
 (function (window, $) {
