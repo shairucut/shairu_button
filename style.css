@@ -1,122 +1,145 @@
-/* ▼タブ */
-#tabcontrol a {
-   display: inline-block;            /* インラインブロック化 */
-   border-width: 1px 1px 0px 1px;    /* 下以外の枠線を引く */
-   border-style: solid;              /* 枠線の種類：実線 */
-   border-color: black;              /* 枠線の色：黒色 */
-   border-radius: 0.75em 0.75em 0 0; /* 枠線の左上角と右上角だけを丸く */
-   padding: 0.75em 1em;              /* 内側の余白 */
-   text-decoration: none;            /* リンクの下線を消す */
-   color: black;                     /* 文字色：黒色 */
-   background-color: white;          /* 背景色：白色 */
-   font-weight: bold;                /* 太字 */
-   position: relative;               /* JavaScriptでz-indexを調整するために必要 */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  text-align: center;
+  padding: 2em;
 }
-/* ▼タブにマウスポインタが載った際(任意) */
-#tabcontrol a:hover {
-   text-decoration: underline;       /* 文字に下線を引く */
-}
-/* ▼タブの中身 */
-#tabbody div {
-    border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
-    margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
-    padding: 1em;            /* 内側の余白量 */
-    background-color: white; /* 背景色：白色 */
-    position: relative;      /* z-indexを調整するために必要 */
-    z-index: 0;              /* 重なり順序を「最も背面」にするため */
- }
- /* ▼タブの配色 */
-#tabcontrol a:nth-child(1), #tabbody div:nth-child(1) { background-color: #ffffdd; }/* 1つ目のタブとその中身用の配色 */
-#tabcontrol a:nth-child(2), #tabbody div:nth-child(2) { background-color: #ddffdd; }/* 2つ目のタブとその中身用の配色 */
-#tabcontrol a:nth-child(3), #tabbody div:nth-child(3) { background-color: #ddddff; }/* 3つ目のタブとその中身用の配色 */
 
-/* アニメーション */
-.animation {
-    width:auto;
-    height:50px;
-    text-align:center;
-    border:2px solid #000;
-    float:left;
-    cursor:pointer;
-    position:relative;
-    box-sizing:border-box;
-    overflow:hidden;
-    margin:0 0 0 0;
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* モバイル時に縦並びにしたい場合 */
 }
-.animation a {
-    font-family:arial;
-    font-size:auto;
-    color: #000;
-    text-decoration:none;
-    line-height:50px;
-    transition:all .10s ease;
-    z-index:2;
-    position:relative;
+
+.Flex {
+  display: flex;
 }
-.effect {
-    width:auto;
-    height:auto;
-    top:auto;
-    left:auto;
-    background:#BBBBBB;
-    position:absolute;
-    transition:all .5s ease;
-    z-index:1;
+.flex-direction {
+  display: flex;
+  flex-direction: column;
 }
-.animation:hover .effect {
-    left:0;
+
+.button-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
 }
-.animation:hover a {
-    color:#000;
+
+@font-face {
+  font-family: 'KeiFont';
+  src: url('fonts/keifont.ttf') format('truetype');
+}
+
+h1 {
+  font-size: 2em;
+  /*font-family: 'KeiFont', sans-serif;*/
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: 'KeiFont', sans-serif;
+  margin-bottom: 1em;
+}
+
+.voice-btn {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff90c2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.voice-btn:hover {
+  background-color: #ff6ca0;
 }
 
 
-/*新規*/
 
-.box {
-    background-size: cover;
-    background: linear-gradient(to bottom, #e1ffff 0%,#b1d8f5 100%); /*グラデーションの指定*/
-    padding:10px;
+.Profile-Icon {
+
+  width: 75px;
+  height: 75px;
+/*
+  justify-content: center;
+  align-items: center;
+*/
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
-.box p {
-    margin:0;
-    padding:0;
+
+.header-text {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em;
+  
+  padding: 1% 2em;
+  
+  text-align: center;
 }
 
+.Youtube-Page {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff90c2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-.area {
-    width: 500px;
-    margin: auto;
-    flex-wrap: wrap;
-    display: flex;
-  }
-   
-  .tab_class {
-    width: calc(100%/5);
-    height: 50px;
-    background-color: darkgrey;
-    line-height: 50px;
-    font-size: 15px;
-    text-align: center;
-    display: block;
-    float: left;
-    order: -1;
-  }
-   
-  input[name="tab_name"] {
-    display: none;
-  }
-   
-  input:checked + .tab_class {
-    background-color: cadetblue;
-    color: aliceblue;
-  }
-   
-  .content_class {
-    display: none;
-    width: 100%;
-  }
-   
-  input:checked + .tab_class + .content_class {
-    display: block;
-  }
+.Twitter-Page {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em; 
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff90c2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.Creatia-Page {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em;
+  padding: 1% 1%;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff90c2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.booth-Page {
+  font-family: 'KeiFont', sans-serif;
+  font-size: 1.2em;
+  padding: 1% 1%;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff90c2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page-block {
+  flex: 1 1 0;  /* 均等に幅を分配する */
+  margin: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  min-width: 0; /* はみ出し対策 */
+  padding: 1em;
+  box-sizing: border-box;
+}
