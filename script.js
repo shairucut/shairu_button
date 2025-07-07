@@ -28,12 +28,23 @@ $(document).ready(function () {
 
   // スクロール時に「TOPに戻る」ボタンを表示
   $(window).scroll(function() {
-      if ($(this).scrollTop() > 50) {
-          topButton.fadeIn();  // ボタンをフェードインさせる
-      } else {
-          topButton.fadeOut();  // ボタンをフェードアウトさせる
+    if ($(this).scrollTop() > 50) {
+        topButton.fadeIn();  // ボタンをフェードインさせる
+    } else {
+        topButton.fadeOut();  // ボタンをフェードアウトさせる
+    }
+
+  // ボタンを下からフェードイン
+    $('.fade-in').each(function() {
+      var pos = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var wHeight = $(window).height();
+      if (scroll > pos - wHeight + wHeight/100){
+        $(this).addClass('inview');
       }
+    });
   });
+  
 
   // クリックでページ先頭に戻るボタン
   topButton.click(function (event) {
