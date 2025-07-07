@@ -21,4 +21,26 @@ $(document).ready(function () {
       currentAudio.play();
     });
   });
+
+  // 「TOPに戻る」ボタンの初期化
+  let topButton = $('#scrollTop');    // ボタンの要素を変数topButtonに格納
+  topButton.hide();   // hideメソッドでtopButtonを非表示にする
+
+  // スクロール時に「TOPに戻る」ボタンを表示
+  $(window).scroll(function() {
+      if ($(this).scrollTop() > 50) {
+          topButton.fadeIn();  // ボタンをフェードインさせる
+      } else {
+          topButton.fadeOut();  // ボタンをフェードアウトさせる
+      }
+  });
+
+  // クリックでページ先頭に戻るボタン
+  topButton.click(function (event) {
+      event.preventDefault();
+      $('body,html').animate({
+          scrollTop: 0
+      },500);  // 500ミリ秒で先頭までスクロールする
+  });
+  
 });
