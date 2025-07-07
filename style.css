@@ -38,6 +38,12 @@ h1 {
   margin-bottom: 1em;
 }
 
+.header-logo h1{
+  font-family: 'KeiFont', sans-serif;
+}
+span{
+  font-family: 'default';
+}
 h2 {
   font-size: 2em;
   font-family: 'KeiFont', sans-serif;
