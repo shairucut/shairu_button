@@ -25,13 +25,8 @@ body {
   flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
-  box-shadow: 0px 7px #1a7940;
 }
-.button-list:active {
-  box-shadow: none;
-  position: relative;
-  top: 7px;
-}
+
 
 @font-face {
   font-family: 'KeiFont';
@@ -66,8 +61,13 @@ h2 {
   color: white;
   cursor: pointer;
   transition: 0.2s;
+  box-shadow: 0px 7px #1a7940;
 }
-
+.voice-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}
 .voice-btn:hover {
   background-color: #ff6ca0;
 }
